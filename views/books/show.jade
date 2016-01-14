@@ -2,7 +2,9 @@ extends ../layout
 
 block content
   p this is show page
-  h1 book number #{book}
-  li: a(href="/books/#{book}/edit") EEeedit
-  form(method="POST" action="/books/#{book}/delete")
+  h1 #{book.title} was writ by #{book.author}
+  p and it looks like:
+  p: img(src="#{book.book_image}")
+  li: a(href="/books/#{book.primary_isbn13}/edit") EEeedit
+  form(method="POST" action="/books/#{book}.primary_isbn13/delete")
     input(type="submit" value="DELETE")

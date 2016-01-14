@@ -2,4 +2,7 @@ extends ../layout
 
 block content
   p Here's all books.
-  a(href="/books/new") ADD A DANG BOOK
+  each b in books
+    a(href="/books/#{b.primary_isbn13}")
+      img(src="#{b.book_image}" width="100")
+  h2: a(href="/books/new") ADD A DANG BOOK
