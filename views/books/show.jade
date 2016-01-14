@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  p this is show page
+  h1 book number #{book}
+  li: a(href="/books/#{book}/edit") EEeedit
+  form(method="POST" action="/books/#{book}/delete")
+    input(type="submit" value="DELETE")
